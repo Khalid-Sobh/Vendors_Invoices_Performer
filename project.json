@@ -4,10 +4,10 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.20.0-preview]",
-    "UiPath.PDF.Activities": "[3.8.0-preview]",
+    "UiPath.PDF.Activities": "[3.14.0]",
     "UiPath.System.Activities": "[22.10.5]",
     "UiPath.Testing.Activities": "[22.10.3]",
-    "UiPath.UIAutomation.Activities": "[22.7.1-preview]",
+    "UiPath.UIAutomation.Activities": "[23.4.3]",
     "UiPath.Word.Activities": "[1.16.0]"
   },
   "webServices": [],
@@ -22,6 +22,7 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -29,7 +30,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -45,31 +47,37 @@
       {
         "editingStatus": "InProgress",
         "testCaseId": "ff761535-f3f9-4242-a7e6-d601f61e84d4",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\GetTransactionDataTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "a2d6a854-a0f4-43ff-80f1-76026b319794",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "63f4c6dc-0936-47a3-9227-0651e356cb5f",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\InitAllSettingsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "d675c972-d7f4-4934-b3e9-bfa2a208cc5f",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\MainTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "e9151862-d2e6-4e79-bf2f-837769e04843",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\ProcessTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "835dc170-393c-436e-b4ad-b8fad5768e63",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       }
     ],
