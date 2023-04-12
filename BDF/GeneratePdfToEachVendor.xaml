@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,3743.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,6500</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Template_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -125,7 +125,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="812.6666666666666,3678.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="954.6666666666666,6435.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Str_WorkFlowname" />
     </Sequence.Variables>
@@ -135,19 +135,19 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message(Started)" sap:VirtualizedContainerService.HintSize="750.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Str_WorkFlowname+&quot; Started Execution&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="750.6666666666666,3296" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message(Started)" sap:VirtualizedContainerService.HintSize="892.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Str_WorkFlowname+&quot; Started Execution&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="892.6666666666666,6052.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="712,3033.3333333333335" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="854,5790" sap2010:WorkflowViewState.IdRef="RetryScope_1">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="670,2854.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="812,5611.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Sequence(Pre Condition)" sap:VirtualizedContainerService.HintSize="608,446" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Sequence(Pre Condition)" sap:VirtualizedContainerService.HintSize="750,446" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,16 +177,17 @@
                     </If.Else>
                   </If>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="608,1595.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="750,4352" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="si:FileInfo" Name="FileComInfo" />
+                    <Variable x:TypeArguments="x:Int32" Name="Int_Index" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="546,1130" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="688,1130" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="Invoices" Name="Str_InvoicesFolderPath" />
                       <Variable x:TypeArguments="x:String" Name="Str_PdfsPath" />
@@ -251,7 +252,7 @@
                       </ui:WindowScope.Body>
                     </ui:WindowScope>
                   </Sequence>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[In_Dt_Invoices]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,54" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Int_Index]" DataTable="[In_Dt_Invoices]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="688,2810.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
@@ -263,7 +264,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[In_Str_TemplatePath]" sap:VirtualizedContainerService.HintSize="592,2583.3333333333335" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+                          <p:WordApplicationScope AutoSave="False" DisplayName="Word Application Scope" FilePath="[In_Str_TemplatePath]" sap:VirtualizedContainerService.HintSize="592,2583.3333333333335" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
                             <p:WordApplicationScope.Body>
                               <ActivityAction x:TypeArguments="ui:WordDocument">
                                 <ActivityAction.Argument>
@@ -301,7 +302,7 @@
                                     <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_9" Replace="[CurrentInvoice(4).ToString]" ReplaceAll="True" Search="IDate" />
                                   </Sequence>
                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,96" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Save Pdf In Folder&quot;]" />
-                                  <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[In_Str_MainPath+In_Str_VendorTaxID]" sap:VirtualizedContainerService.HintSize="496,115.33333333333333" sap2010:WorkflowViewState.IdRef="WordExportToPdf_2" ReplaceExisting="False" />
+                                  <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\&quot;+Int_Index.ToString+&quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="496,115.33333333333333" sap2010:WorkflowViewState.IdRef="WordExportToPdf_2" ReplaceExisting="False" />
                                 </Sequence>
                               </ActivityAction>
                             </p:WordApplicationScope.Body>
@@ -311,12 +312,12 @@
                     </ui:ForEachRow.Body>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <uascw:CompressFiles CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileInfo="[FileComInfo]" CompressedFileName="[&quot;Compressed&quot;+In_Str_VendorTaxID]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="546,220.66666666666666" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+                  <uascw:CompressFiles CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileInfo="[FileComInfo]" CompressedFileName="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\Compressed.zip&quot;]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="688,220.66666666666666" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
                     <uascw:CompressFiles.ContentToArchive>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
                         <InArgument x:TypeArguments="x:String">[In_Str_MainPath+In_Str_VendorTaxID]</InArgument>
@@ -324,7 +325,7 @@
                     </uascw:CompressFiles.ContentToArchive>
                   </uascw:CompressFiles>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="608,622.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="750,622.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="Bool_PdfFounded" />
                   </Sequence.Variables>
@@ -367,7 +368,7 @@
         </ui:RetryScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="716.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="858.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -389,7 +390,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="716.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="858.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

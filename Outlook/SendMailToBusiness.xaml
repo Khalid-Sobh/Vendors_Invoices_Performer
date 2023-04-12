@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>789.3333333333334,4046</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,3862.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SendMailToBusiness" sap:VirtualizedContainerService.HintSize="799.3333333333334,3981.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="SendMailToBusiness" sap:VirtualizedContainerService.HintSize="799.3333333333334,3798" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="SendMailToBusiness" Name="Str_WorkFlowname" />
       <Variable x:TypeArguments="x:String" Name="Str_MailBody" />
@@ -147,7 +147,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="737.3333333333334,3641.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="737.3333333333334,3458" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -155,24 +155,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="698.6666666666666,2593.3333333333335" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="698.6666666666666,2410" sap2010:WorkflowViewState.IdRef="RetryScope_1">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="656.6666666666666,2414.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="656.6666666666666,2231.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Sequence(Pre Condition)" sap:VirtualizedContainerService.HintSize="594.6666666666666,625.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence(Pre Condition)" sap:VirtualizedContainerService.HintSize="594.6666666666666,442" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[IsNothing (In_Str_BusinessMail)]" sap:VirtualizedContainerService.HintSize="410,514.6666666666666" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[IsNothing (In_Str_BusinessMail)]" sap:VirtualizedContainerService.HintSize="410,331.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -241,7 +241,7 @@
                   </umab:CreateHtmlContent>
                   <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[Str_MailBody]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,150.66666666666666" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" Sensitivity="Normal" Subject="[Str_MailSubject+In_Str_TaxID]" To="[In_Str_BusinessMail]">
                     <ui:SendOutlookMail.Files>
-                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
                     </ui:SendOutlookMail.Files>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
