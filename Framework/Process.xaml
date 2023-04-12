@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>440,447</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,1370</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -101,7 +101,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="450,382" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="686.6666666666666,1305.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Dt_Invoices" />
       <Variable x:TypeArguments="x:String" Name="Str_MailSubjectStatus" />
@@ -112,164 +112,496 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <If Condition="[In_Counter&gt;=1]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="624.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <Flowchart sap:VirtualizedContainerService.HintSize="1271.3333333333333,918" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="BoolNoMail" />
+      </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">520,2.6666666666666643</av:Point>
+          <av:Size x:Key="ShapeSize">60,74.66666666666667</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">550,77.33333333333334 550,136.66666666666666</av:PointCollection>
+          <x:Double x:Key="Width">1237</x:Double>
+          <x:Double x:Key="Height">880.6666666666667</x:Double>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,536" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook\ReadBusinessMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Outlook\ReadBusinessMail.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_TaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="Out_Str_MailSubject">[Str_MailSubjectStatus]</OutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Str_Address">[in_Config("MyMailAddress").ToString]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <Sequence DisplayName="Sequence(Check Mail Subject)" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Flowchart.StartNode>
+        <x:Reference>__ReferenceID9</x:Reference>
+      </Flowchart.StartNode>
+      <FlowDecision x:Name="__ReferenceID9" DisplayName="Send/Check Mail" sap:VirtualizedContainerService.HintSize="94,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+        <FlowDecision.Condition>
+          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="In_Counter&gt;=1" />
+        </FlowDecision.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">503,136.66666666666666</av:Point>
+            <av:Size x:Key="ShapeSize">94,86.66666666666667</av:Size>
+            <av:PointCollection x:Key="TrueConnector">503,180 270,180 270,223</av:PointCollection>
+            <av:PointCollection x:Key="FalseConnector">597,180 830,180 830,227.66666666666669</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <FlowDecision.True>
+          <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">169.99999999999997,223</av:Point>
+                <av:Size x:Key="ShapeSize">200,54</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">270,277 270,366.6666666666667</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Flowchart sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Flowchart_1">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <av:Point x:Key="ShapeLocation">500,2.6666666666666643</av:Point>
-                  <av:Size x:Key="ShapeSize">60,75</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">530,77.33333333333334 530,146.66666666666666</av:PointCollection>
-                  <x:Double x:Key="Width">1107</x:Double>
-                  <x:Double x:Key="Height">701.3333333333333</x:Double>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Flowchart.StartNode>
-                <x:Reference>__ReferenceID2</x:Reference>
-              </Flowchart.StartNode>
-              <FlowDecision x:Name="__ReferenceID2" Condition="[Str_MailSubjectStatus.Contains(&quot;approved&quot;)]" DisplayName="Approved Mail" sap:VirtualizedContainerService.HintSize="84,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook\ReadBusinessMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Outlook\ReadBusinessMail.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="In_Str_TaxID">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="Out_Str_MailSubject">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_MailSubjectStatus" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Str_Address">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MyMailAddress&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+                  <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="Out_NoMails">
+                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BoolNoMail" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID1" DisplayName="No MAils?" sap:VirtualizedContainerService.HintSize="70,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                <FlowDecision.Condition>
+                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BoolNoMail" />
+                </FlowDecision.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">487.66666666666663,146.66666666666666</av:Point>
-                    <av:Size x:Key="ShapeSize">84,87</av:Size>
-                    <av:PointCollection x:Key="TrueConnector">487.66666666666663,190 220,190 220,297.3333333333333</av:PointCollection>
-                    <av:PointCollection x:Key="FalseConnector">572.3333333333333,190 880,190 880,307.3333333333333</av:PointCollection>
+                    <av:Point x:Key="ShapeLocation">235,366.6666666666667</av:Point>
+                    <av:Size x:Key="ShapeSize">70,86.66666666666667</av:Size>
+                    <av:PointCollection x:Key="TrueConnector">235,410 190,410 190,516.6666666666666</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">305,410 780,410 780,506.66666666666663</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
-                  <FlowStep x:Name="__ReferenceID1">
+                  <FlowDecision x:Name="__ReferenceID2" DisplayName="Postpone/BE" sap:VirtualizedContainerService.HintSize="73.33333333333333,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                    <FlowDecision.Condition>
+                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="In_Counter=2" />
+                    </FlowDecision.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">3,297.3333333333333</av:Point>
-                        <av:Size x:Key="ShapeSize">434,82</av:Size>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">153.33333333333334,516.6666666666666</av:Point>
+                        <av:Size x:Key="ShapeSize">73.33333333333333,86.66666666666667</av:Size>
+                        <av:PointCollection x:Key="TrueConnector">153.33333333333334,560 100,560 100,663</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">226.66666666666669,560 350,560 350,663</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign(Update Queue Status To Accepted)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">["accepted"]</InArgument>
-                      </Assign.Value>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Assign>
-                  </FlowStep>
+                    <FlowDecision.True>
+                      <FlowStep x:Name="__ReferenceID3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">0,663</av:Point>
+                            <av:Size x:Key="ShapeSize">200,54</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[new BusinessRuleException(&quot;No Mail Recieved for this vendor&quot;)]" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="Throw_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Throw>
+                      </FlowStep>
+                    </FlowDecision.True>
+                    <FlowDecision.False>
+                      <FlowStep x:Name="__ReferenceID4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">250,663</av:Point>
+                            <av:Size x:Key="ShapeSize">200,54</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:PostponeTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DeferDate="[DateTime.Now.AddMinutes(5)]" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="334,197.33333333333334" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_3" TransactionItem="[in_TransactionItem]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:PostponeTransactionItem>
+                      </FlowStep>
+                    </FlowDecision.False>
+                  </FlowDecision>
                 </FlowDecision.True>
                 <FlowDecision.False>
-                  <FlowStep x:Name="__ReferenceID0">
+                  <FlowDecision x:Name="__ReferenceID5" DisplayName="Rejected/Approved" sap:VirtualizedContainerService.HintSize="108,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                    <FlowDecision.Condition>
+                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Str_MailSubjectStatus.Contains(&quot;approved&quot;)" />
+                    </FlowDecision.Condition>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">663,307.3333333333333</av:Point>
-                        <av:Size x:Key="ShapeSize">434,82</av:Size>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">726,506.66666666666663</av:Point>
+                        <av:Size x:Key="ShapeSize">108,86.66666666666667</av:Size>
+                        <x:String x:Key="TrueLabel">Approved</x:String>
+                        <x:String x:Key="FalseLabel">Rejected</x:String>
+                        <av:PointCollection x:Key="FalseConnector">834,550 1020,550 1020,647.3333333333334</av:PointCollection>
+                        <av:PointCollection x:Key="TrueConnector">726,550 580,550 580,647.6666666666666</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign(Update Queue Status to rejected)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">["rejected"]</InArgument>
-                      </Assign.Value>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </Assign>
-                  </FlowStep>
+                    <FlowDecision.True>
+                      <FlowStep x:Name="__ReferenceID7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">480,647.6666666666666</av:Point>
+                            <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Sequence(Approved)" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="sd:DataTable" Name="Dt_DB_Invoices" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Assign(Update Queue Status to approved)" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">["approved"]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Getting_Invoices_Info_For_Vendor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="DB\Getting_Invoices_Info_For_Vendor.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_vendorID">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Tax ID‏&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_DBInvoicesTableName">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;InvoicesTable&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_ColumnNameForID">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;VendorTaxId_ColumnName&quot;).ToString" />
+                              </InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoicesForVendorDT">
+                                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Dt_DB_Invoices" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">
+                                <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="In_DB_Connection" />
+                              </InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="BDF\GeneratePdfToEachVendor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="BDF\GeneratePdfToEachVendor.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="In_Dt_Invoices">
+                                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Dt_DB_Invoices" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_Vendor">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Vendor&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorTaxID">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorAddress">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Address&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCity">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;City&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_vendorCountry">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Country&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_TemplatePath">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;TemplatePath&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_InvoicesFolderPath">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PdfsFolderPath&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_InvoiceFolderName">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;PdfsFolderName&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_CompressedFilePath">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CompressedFilePath&quot;).ToString" />
+                              </InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                        </Sequence>
+                      </FlowStep>
+                    </FlowDecision.True>
+                    <FlowDecision.False>
+                      <FlowStep x:Name="__ReferenceID6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">803,647.3333333333334</av:Point>
+                            <av:Size x:Key="ShapeSize">434,85.33333333333333</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Assign(Update Queue Status to rejected)" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Object">["rejected"]</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
+                      </FlowStep>
+                    </FlowDecision.False>
+                  </FlowDecision>
                 </FlowDecision.False>
               </FlowDecision>
-              <x:Reference>__ReferenceID0</x:Reference>
-              <x:Reference>__ReferenceID1</x:Reference>
-            </Flowchart>
-          </Sequence>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Mail recieved&quot;]" />
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,1452" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowDecision.True>
+        <FlowDecision.False>
+          <FlowStep x:Name="__ReferenceID8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">730,227.66666666666669</av:Point>
+                <av:Size x:Key="ShapeSize">200,84.66666666666667</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Sequence(Sending Mail)" sap:VirtualizedContainerService.HintSize="200,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Navigte_To_Search_for_Invoices_By_Vendors.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Acme\Navigte_To_Search_for_Invoices_By_Vendors.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Navigate_To_Invoices_Search_Results.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Acme\Navigate_To_Invoices_Search_Results.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_VendorTaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Extract_InvoicesDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Acme\Extract_InvoicesDT.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoicesDT">
+                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Dt_Invoices" />
+                  </OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_AcmeUrl">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ACMEURL&quot;).ToString" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Insert_InvoicesDT_Into_DBInvoicesDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="DB\Insert_InvoicesDT_Into_DBInvoicesDT.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InvoicesDT">[Dt_Invoices]</InArgument>
+                  <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">[In_DB_Connection]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_DBInvoicesDTName">[in_Config("InvoicesTable").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook\SendMailToBusiness.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Outlook\SendMailToBusiness.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_Str_BusinessMail">[in_Config("MailBusiness").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_Str_TaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorName">[in_TransactionItem.SpecificContent("Vendor").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorAddress">[in_TransactionItem.SpecificContent("Address").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCountry">[in_TransactionItem.SpecificContent("Country").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCity">[in_TransactionItem.SpecificContent("City").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:PostponeTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DeferDate="[DateTime.Now.AddMinutes(5)]" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_4" TransactionItem="[in_TransactionItem]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,96" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[In_Counter.ToString]" />
+            </Sequence>
+          </FlowStep>
+        </FlowDecision.False>
+      </FlowDecision>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+    </Flowchart>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="624.6666666666666,886" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="588,806" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <If Condition="[In_Counter&gt;=1]" sap:VirtualizedContainerService.HintSize="526,695.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Navigte_To_Search_for_Invoices_By_Vendors.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Acme\Navigte_To_Search_for_Invoices_By_Vendors.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Navigate_To_Invoices_Search_Results.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Acme\Navigate_To_Invoices_Search_Results.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_VendorTaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Extract_InvoicesDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Acme\Extract_InvoicesDT.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoicesDT">[Dt_Invoices]</OutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_AcmeUrl">[in_Config("ACMEURL").ToString]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Insert_InvoicesDT_Into_DBInvoicesDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DB\Insert_InvoicesDT_Into_DBInvoicesDT.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InvoicesDT">[Dt_Invoices]</InArgument>
-              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">[In_DB_Connection]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_DBInvoicesDTName">[in_Config("InvoicesTable").ToString]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook\SendMailToBusiness.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Outlook\SendMailToBusiness.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_BusinessMail">[in_Config("MailBusiness").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_TaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorName">[in_TransactionItem.SpecificContent("Vendor").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorAddress">[in_TransactionItem.SpecificContent("Address").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCountry">[in_TransactionItem.SpecificContent("Country").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCity">[in_TransactionItem.SpecificContent("City").ToString]</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;postponed&quot;]" />
-          <ui:PostponeTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DeferDate="04/10/2023 02:33:00" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="450,192" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_1" TransactionItem="[in_TransactionItem]" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[In_Counter.ToString]" />
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="492,543.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook\ReadBusinessMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Outlook\ReadBusinessMail.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_TaxID">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="Out_Str_MailSubject">
+                      <VisualBasicReference x:TypeArguments="x:String" ExpressionText="Str_MailSubjectStatus" />
+                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Str_Address">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MyMailAddress&quot;).ToString" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem" />
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="Out_NoMails" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <Sequence DisplayName="Sequence(Check Mail Subject)" sap:VirtualizedContainerService.HintSize="450,164.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Flowchart sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">500,2.6666666666666643</av:Point>
+                        <av:Size x:Key="ShapeSize">60,74.66666666666667</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">530,77.33333333333334 530,146.66666666666666</av:PointCollection>
+                        <x:Double x:Key="Width">1107</x:Double>
+                        <x:Double x:Key="Height">701.3333333333333</x:Double>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Flowchart.StartNode>
+                      <x:Reference>__ReferenceID12</x:Reference>
+                    </Flowchart.StartNode>
+                    <FlowDecision x:Name="__ReferenceID12" Condition="[Str_MailSubjectStatus.Contains(&quot;approved&quot;)]" DisplayName="Approved Mail" sap:VirtualizedContainerService.HintSize="84.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">487.66666666666663,146.66666666666666</av:Point>
+                          <av:Size x:Key="ShapeSize">84.66666666666667,86.66666666666667</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">487.66666666666663,190 220,190 220,237.33333333333334</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">572.3333333333333,190 870,190 870,237.33333333333334</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">3,237.33333333333334</av:Point>
+                              <av:Size x:Key="ShapeSize">434,85.33333333333333</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Assign(Update Queue Status To Accepted)" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">["accepted"]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">653,237.33333333333334</av:Point>
+                              <av:Size x:Key="ShapeSize">434,85.33333333333333</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Assign(Update Queue Status to rejected)" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[in_TransactionItem.SpecificContent("Status")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">["rejected"]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                    <x:Reference>__ReferenceID10</x:Reference>
+                    <x:Reference>__ReferenceID11</x:Reference>
+                  </Flowchart>
+                </Sequence>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Mail recieved&quot;]" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="421.3333333333333,1333.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Navigte_To_Search_for_Invoices_By_Vendors.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Acme\Navigte_To_Search_for_Invoices_By_Vendors.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Navigate_To_Invoices_Search_Results.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Acme\Navigate_To_Invoices_Search_Results.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorTaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Acme\Extract_InvoicesDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Acme\Extract_InvoicesDT.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoicesDT">[Dt_Invoices]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_AcmeUrl">[in_Config("ACMEURL").ToString]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Insert_InvoicesDT_Into_DBInvoicesDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DB\Insert_InvoicesDT_Into_DBInvoicesDT.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InvoicesDT">[Dt_Invoices]</InArgument>
+                    <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">[In_DB_Connection]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_DBInvoicesDTName">[in_Config("InvoicesTable").ToString]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook\SendMailToBusiness.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Outlook\SendMailToBusiness.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_BusinessMail">[in_Config("MailBusiness").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_TaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorName">[in_TransactionItem.SpecificContent("Vendor").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorAddress">[in_TransactionItem.SpecificContent("Address").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCountry">[in_TransactionItem.SpecificContent("Country").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCity">[in_TransactionItem.SpecificContent("City").ToString]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379.3333333333333,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;postponed&quot;]" />
+                <ui:PostponeTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DeferDate="04/10/2023 02:33:00" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="379.3333333333333,197.33333333333334" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_1" TransactionItem="[in_TransactionItem]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379.3333333333333,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[In_Counter.ToString]" />
+              </Sequence>
+            </If.Else>
+          </If>
         </Sequence>
-      </If.Else>
-    </If>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
