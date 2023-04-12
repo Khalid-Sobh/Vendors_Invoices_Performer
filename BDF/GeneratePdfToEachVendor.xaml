@@ -7,14 +7,12 @@
     <x:Property Name="In_Str_VendorCity" Type="InArgument(x:String)" />
     <x:Property Name="In_Str_vendorCountry" Type="InArgument(x:String)" />
     <x:Property Name="In_Str_TemplatePath" Type="InArgument(x:String)" />
-    <x:Property Name="In_Str_InvoicesFolderPath" Type="InArgument(x:String)" />
-    <x:Property Name="In_Str_InvoiceFolderName" Type="InArgument(x:String)" />
-    <x:Property Name="In_Str_CompressedFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="In_Str_MainPath" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1034.6666666666667,6440</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,3743.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Template_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -67,66 +65,67 @@
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="112">
-      <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
-      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.ObjectModel</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.Xml</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>UiPath.PDF</AssemblyReference>
-      <AssemblyReference>System.Management.Automation</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="1044.6666666666667,6375.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="812.6666666666666,3678.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Str_WorkFlowname" />
     </Sequence.Variables>
@@ -136,25 +135,25 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message(Started)" sap:VirtualizedContainerService.HintSize="982.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Str_WorkFlowname+&quot; Started Execution&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="982.6666666666666,5992.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message(Started)" sap:VirtualizedContainerService.HintSize="750.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Str_WorkFlowname+&quot; Started Execution&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="750.6666666666666,3296" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="944,5730" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="712,3033.3333333333335" sap2010:WorkflowViewState.IdRef="RetryScope_1">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="902,5471.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="670,2854.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Sequence(Pre Condition)" sap:VirtualizedContainerService.HintSize="840,446" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Sequence(Pre Condition)" sap:VirtualizedContainerService.HintSize="608,446" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[In_Dt_Invoices.RowCount&gt;0 And Not String.IsNullOrEmpty(In_Str_Vendor) And Not String.IsNullOrEmpty(In_Str_InvoicesFolderPath) And Not String.IsNullOrEmpty(In_Str_CompressedFilePath)]" sap:VirtualizedContainerService.HintSize="410,335.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[In_Dt_Invoices.RowCount&gt;0 And Not String.IsNullOrEmpty(In_Str_Vendor)]" sap:VirtualizedContainerService.HintSize="410,335.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
@@ -178,15 +177,19 @@
                     </If.Else>
                   </If>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="840,4158" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="608,1595.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="si:FileInfo" Name="FileComInfo" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="586,1167.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="546,1130" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="Invoices" Name="Str_InvoicesFolderPath" />
+                      <Variable x:TypeArguments="x:String" Name="Str_PdfsPath" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -194,13 +197,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process(Open Power Shell)" FileName="cmd.exe" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
-                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="484,928.6666666666666" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="f3aa71e43463a06216c4021925baed0b" Selector="&lt;wnd app='powershell.exe' cls='ConsoleWindowClass' title='*Windows PowerShell*' /&gt;">
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="484,891.3333333333334" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' title='C:\Windows\System32\cmd.exe' /&gt;">
                       <ui:WindowScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,741.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,744" sap2010:WorkflowViewState.IdRef="Sequence_25">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,7 +211,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_24" SimulateType="False" Text="D:[k(enter)]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="6a3069f784a606d9df45102ac9398a93">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -218,9 +221,9 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_25" SimulateType="False" Text="cd[k(enter)]">
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_25" SimulateType="False" Text="cd AllInvoices[k(enter)]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="6a3069f784a606d9df45102ac9398a93">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -230,9 +233,9 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_26" SimulateType="False" Text="[&quot;mkdir&quot;+&quot; &quot;+In_Str_InvoiceFolderName+In_Str_VendorTaxID+ &quot;[k(enter)]&quot;]">
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_26" SimulateType="False" Text="[&quot;mkdir&quot;+&quot; &quot;+In_Str_VendorTaxID+ &quot;[k(enter)]&quot;]">
                               <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="6a3069f784a606d9df45102ac9398a93">
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
                                   <ui:Target.TimeoutMS>
                                     <InArgument x:TypeArguments="x:Int32" />
                                   </ui:Target.TimeoutMS>
@@ -242,192 +245,86 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="dbf3084f2ef8fd102a3a4ff6614e1880" WaitForReady="INTERACTIVE" />
+                            <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" WaitForReady="INTERACTIVE" />
                           </Sequence>
                         </ActivityAction>
                       </ui:WindowScope.Body>
                     </ui:WindowScope>
                   </Sequence>
-                  <p:WordApplicationScope AutoSave="False" CreateNewFile="False" DisplayName="Word Application Scope" FilePath="[In_Str_TemplatePath]" sap:VirtualizedContainerService.HintSize="586,2840" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
-                    <p:WordApplicationScope.Body>
-                      <ActivityAction x:TypeArguments="ui:WordDocument">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[In_Dt_Invoices]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,54" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                    <ui:ForEachRow.Body>
+                      <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentInvoice" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,2731.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="si:FileInfo" Name="ZipFileInfo" />
-                          </Sequence.Variables>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="654,2694" sap2010:WorkflowViewState.IdRef="Sequence_28">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[In_Dt_Invoices]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,2380" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-                            <ui:ForEachRow.Body>
-                              <ActivityAction x:TypeArguments="sd:DataRow">
+                          <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[In_Str_TemplatePath]" sap:VirtualizedContainerService.HintSize="592,2583.3333333333335" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+                            <p:WordApplicationScope.Body>
+                              <ActivityAction x:TypeArguments="ui:WordDocument">
                                 <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentInvoice" />
+                                  <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,2264.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <Sequence sap:VirtualizedContainerService.HintSize="558,2473.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Sequence(Vendor Table)" sap:VirtualizedContainerService.HintSize="434,922" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <Sequence DisplayName="Sequence(Vendor Table)" sap:VirtualizedContainerService.HintSize="496,1120.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Vendor'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" SimulateType="True" Text="[In_Str_Vendor]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce0c1523-1897-4725-91ab-7bd7ddfd8d54" InformativeScreenshot="3f9ab69834606f84c8fd4b0e5c034d67" Selector="&lt;uia role='table' /&gt;&lt;uia role='item' tableCol='0' tableRow='1' colName='Vendor' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Tax ID'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_12" SimulateType="True" Text="[In_Str_VendorTaxID]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="522ed800-de6b-4ec5-9102-3faf744d81d1" InformativeScreenshot="5ab96c4551edd246fd1cc6ee03c6af40" Selector="&lt;uia role='table' /&gt;&lt;uia role='item' tableCol='1' tableRow='1' colName='Tax ID' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Address'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" SimulateType="True" Text="[In_Str_VendorAddress]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a688c795-f7ba-4ee6-8dc9-3091b43bb6b0" InformativeScreenshot="028ac8c257e43ec10966d6f6450be184" Selector="&lt;uia role='table' /&gt;&lt;uia role='item' tableCol='2' tableRow='1' colName='Address' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'City'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" SimulateType="True" Text="[In_Str_VendorCity]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d4854b62-2842-4b82-99e9-51d3625acb51" InformativeScreenshot="6d06f43e7f64616a4958269a5404fe65" Selector="&lt;uia role='table' /&gt;&lt;uia role='item' tableCol='3' tableRow='1' colName='City' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Country'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" SimulateType="True" Text="[In_Str_vendorCountry]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="42053d88-4c50-42fa-a809-602a90e0efb5" InformativeScreenshot="55e14736ac404656af818b15de10a8f8" Selector="&lt;uia role='table' /&gt;&lt;uia role='item' tableCol='4' tableRow='1' colName='Country' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[In_Str_Vendor]" ReplaceAll="True" Search="VName" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[In_Str_VendorTaxID]" ReplaceAll="True" Search="VID" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[In_Str_VendorAddress]" ReplaceAll="True" Search="VAddress" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="[In_Str_VendorCity]" ReplaceAll="True" Search="VCity" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_5" Replace="[In_Str_vendorCountry]" ReplaceAll="True" Search="VCountry" />
                                   </Sequence>
-                                  <Sequence DisplayName="Sequence(Invoice Table)" sap:VirtualizedContainerService.HintSize="434,922" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                  <Sequence DisplayName="Sequence(Invoice Table)" sap:VirtualizedContainerService.HintSize="496,910.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Invoice Number'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_16" SimulateType="True" Text="[CurrentInvoice(0).ToString]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce0c1523-1897-4725-91ab-7bd7ddfd8d54" InformativeScreenshot="8280d9858febddaf534340ab756b27b3" Selector="&lt;uia idx='2' role='table' /&gt;&lt;uia role='item' tableCol='0' tableRow='1' colName='Invoice Number' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Vendor TaxId'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_17" SimulateType="True" Text="[CurrentInvoice(1).ToString]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="522ed800-de6b-4ec5-9102-3faf744d81d1" InformativeScreenshot="7a3625a726c13b0cee80b4b33768ef39" Selector="&lt;uia idx='2' role='table' /&gt;&lt;uia role='item' tableCol='1' tableRow='1' colName='Vendor&amp;#xD; Tax ID' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Invoice item'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_18" SimulateType="True" Text="[CurrentInvoice(2).ToString]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a688c795-f7ba-4ee6-8dc9-3091b43bb6b0" InformativeScreenshot="f4162da0fa24b4101ef8552b8bf15299" Selector="&lt;uia idx='2' role='table' /&gt;&lt;uia role='item' tableCol='2' tableRow='1' colName='Invoice Item' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Total'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_19" SimulateType="True" Text="[CurrentInvoice(3).ToString]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d4854b62-2842-4b82-99e9-51d3625acb51" InformativeScreenshot="4480c83ff22ba6209cc8a51a97cd8472" Selector="&lt;uia idx='2' role='table' /&gt;&lt;uia role='item' tableCol='3' tableRow='1' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
-                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Date'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_20" SimulateType="True" Text="[CurrentInvoice(4).ToString]">
-                                      <ui:TypeInto.Target>
-                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="42053d88-4c50-42fa-a809-602a90e0efb5" InformativeScreenshot="71f3134f61906b567282407c9dd68f91" Selector="&lt;uia idx='2' role='table' /&gt;&lt;uia role='item' tableCol='4' tableRow='1' colName='Date' enabled='true' /&gt;">
-                                          <ui:Target.TimeoutMS>
-                                            <InArgument x:TypeArguments="x:Int32" />
-                                          </ui:Target.TimeoutMS>
-                                          <ui:Target.WaitForReady>
-                                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                                          </ui:Target.WaitForReady>
-                                        </ui:Target>
-                                      </ui:TypeInto.Target>
-                                    </ui:TypeInto>
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_6" Replace="[CurrentInvoice(0).ToString]" ReplaceAll="True" Search="InNumber" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_7" Replace="[CurrentInvoice(2).ToString]" ReplaceAll="True" Search="IItem" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_8" Replace="[CurrentInvoice(3).ToString]" ReplaceAll="True" Search="ITotal" />
+                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Vendor in Document" sap:VirtualizedContainerService.HintSize="434,170" sap2010:WorkflowViewState.IdRef="WordReplaceText_9" Replace="[CurrentInvoice(4).ToString]" ReplaceAll="True" Search="IDate" />
                                   </Sequence>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.66666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Save Pdf In Folder&quot;]" />
-                                  <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[In_Str_InvoicesFolderPath+In_Str_InvoiceFolderName]" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="WordExportToPdf_1" ReplaceExisting="False" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,96" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Save Pdf In Folder&quot;]" />
+                                  <p:WordExportToPdf DisplayName="Save Document as PDF" FilePath="[In_Str_MainPath+In_Str_VendorTaxID]" sap:VirtualizedContainerService.HintSize="496,115.33333333333333" sap2010:WorkflowViewState.IdRef="WordExportToPdf_2" ReplaceExisting="False" />
                                 </Sequence>
                               </ActivityAction>
-                            </ui:ForEachRow.Body>
-                          </ui:ForEachRow>
-                          <uascw:CompressFiles CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileInfo="[ZipFileInfo]" CompressedFileName="[In_Str_CompressedFilePath]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="510,219.33333333333334" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
-                            <uascw:CompressFiles.ContentToArchive>
-                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
-                                <InArgument x:TypeArguments="x:String">[In_Str_InvoicesFolderPath+In_Str_InvoiceFolderName]</InArgument>
-                              </scg:List>
-                            </uascw:CompressFiles.ContentToArchive>
-                          </uascw:CompressFiles>
+                            </p:WordApplicationScope.Body>
+                          </p:WordApplicationScope>
                         </Sequence>
                       </ActivityAction>
-                    </p:WordApplicationScope.Body>
-                  </p:WordApplicationScope>
+                    </ui:ForEachRow.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEachRow>
+                  <uascw:CompressFiles CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileInfo="[FileComInfo]" CompressedFileName="[&quot;Compressed&quot;+In_Str_VendorTaxID]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="546,220.66666666666666" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+                    <uascw:CompressFiles.ContentToArchive>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                        <InArgument x:TypeArguments="x:String">[In_Str_MainPath+In_Str_VendorTaxID]</InArgument>
+                      </scg:List>
+                    </uascw:CompressFiles.ContentToArchive>
+                  </uascw:CompressFiles>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="840,676.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="608,622.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="Bool_PdfFounded" />
                   </Sequence.Variables>
@@ -436,27 +333,27 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:FileExistsX DisplayName="File Exists" Exists="[Bool_PdfFounded]" sap:VirtualizedContainerService.HintSize="798,135.33333333333334" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[In_Str_InvoicesFolderPath+In_Str_InvoiceFolderName+&quot;.zip&quot;]" />
-                  <If Condition="[Bool_PdfFounded]" sap:VirtualizedContainerService.HintSize="798,409.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                  <ui:FileExistsX DisplayName="File Exists" Exists="[Bool_PdfFounded]" sap:VirtualizedContainerService.HintSize="410,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\&quot;+&quot;Compressed&quot;+In_Str_VendorTaxID]" />
+                  <If Condition="[Bool_PdfFounded]" sap:VirtualizedContainerService.HintSize="410,335.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,186.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_18">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.66666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[Str_WorkFlowname+&quot; Post Condition Succeeded&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[Str_WorkFlowname+&quot; Post Condition Succeeded&quot;]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,248.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,315.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.66666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[Str_WorkFlowname+&quot; Post Condition Failed&quot;]" />
-                        <Throw Exception="[new SystemException(&quot;Invalid Pdf&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[Str_WorkFlowname+&quot; Post Condition Failed&quot;]" />
+                        <Throw Exception="[new SystemException(&quot;Invalid Pdf&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
                       </Sequence>
                     </If.Else>
                   </If>
@@ -470,7 +367,7 @@
         </ui:RetryScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="812.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="716.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -492,7 +389,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="812.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="716.6666666666666,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -516,6 +413,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message(Ended)" sap:VirtualizedContainerService.HintSize="846.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Str_WorkFlowname+&quot; Ended Execution&quot;]" />
+    <ui:LogMessage DisplayName="Log Message(Ended)" sap:VirtualizedContainerService.HintSize="750.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Str_WorkFlowname+&quot; Ended Execution&quot;]" />
   </Sequence>
 </Activity>
