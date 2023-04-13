@@ -43,7 +43,9 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": []
+      "ignoredFiles": [
+        "Data/Config.xlsx"
+      ]
     },
     "fileInfoCollection": [
       {
