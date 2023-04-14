@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,554.6666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>440,554.6666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -220,7 +220,7 @@
                             <av:Size x:Key="ShapeSize">200,54</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:PostponeTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DeferDate="[DateTime.Now.AddMinutes(1)]" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="334,197.33333333333334" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_3" TransactionItem="[in_TransactionItem]">
+                        <ui:PostponeTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DeferDate="[DateTime.Now.AddMinutes(1)]" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_3" TransactionItem="[in_TransactionItem]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -279,71 +279,35 @@
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[Str_MailSubjectStatus.ToString]" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Getting_Invoices_Info_For_Vendor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="DB\Getting_Invoices_Info_For_Vendor.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_vendorID">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_DBInvoicesTableName">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;InvoicesTable&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_ColumnNameForID">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;InvoicesDt_VendorTaxIdColumnName&quot;).ToString" />
-                              </InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoicesForVendorDT">
-                                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Dt_DB_Invoices" />
-                              </OutArgument>
-                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">
-                                <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="In_DB_Connection" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_vendorID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_DBInvoicesTableName">[in_Config("InvoicesTable").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_ColumnNameForID">[in_Config("InvoicesDt_VendorTaxIdColumnName").ToString]</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoicesForVendorDT">[Dt_DB_Invoices]</OutArgument>
+                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">[In_DB_Connection]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="BDF\GeneratePdfToEachVendor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="BDF\GeneratePdfToEachVendor.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="In_Dt_Invoices">
-                                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Dt_DB_Invoices" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_Vendor">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Vendor&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorTaxID">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorAddress">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Address&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCity">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;City&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_vendorCountry">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;Country&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_TemplatePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;TemplatePath&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_MainPath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MainPath&quot;).ToString" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="In_Dt_Invoices">[Dt_DB_Invoices]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_Vendor">[in_TransactionItem.SpecificContent("Vendor").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorTaxID">[in_TransactionItem.SpecificContent("Tax ID").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorAddress">[in_TransactionItem.SpecificContent("Address").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_VendorCity">[in_TransactionItem.SpecificContent("City").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_vendorCountry">[in_TransactionItem.SpecificContent("Country").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_TemplatePath">[in_Config("TemplatePath").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_MainPath">[in_Config("MainPath").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_DDirector">[in_Config("DDirector").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Str_AllIncoicesFileName">[in_Config("AllInvoicesFileName").ToString]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Update_DBVendorDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="DB\Update_DBVendorDT.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">
-                                <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="In_DB_Connection" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTName">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Vendors_Table&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTColumnsNames">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;VendorColumnNames&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_VendorStatus">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="VStatus" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                                <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">[In_DB_Connection]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTName">[in_Config("Vendors_Table").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTColumnsNames">[in_Config("VendorColumnNames").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_VendorStatus">[VStatus]</InArgument>
+                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -354,9 +318,7 @@
                           <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Invoices for VendorID : &quot;+in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString]" To="[in_Config(&quot;MailBusiness&quot;).ToString]">
                             <ui:SendOutlookMail.Files>
                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                <InArgument x:TypeArguments="x:String">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MainPath&quot;).ToString+in_TransactionItem.SpecificContent(&quot;Tax ID&quot;).ToString+&quot;\&quot;+&quot;comprissed.zip&quot;" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String">[in_Config("MainPath").ToString+in_TransactionItem.SpecificContent("Tax ID").ToString+"\"+"comprissed.zip"]</InArgument>
                               </scg:List>
                             </ui:SendOutlookMail.Files>
                           </ui:SendOutlookMail>
@@ -435,24 +397,12 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DB\Update_DBVendorDT.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="DB\Update_DBVendorDT.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">
-                                      <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="In_DB_Connection" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTName">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Vendors_Table&quot;).ToString" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTColumnsNames">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;VendorColumnNames&quot;).ToString" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorStatus">
-                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="VStatus" />
-                                    </InArgument>
-                                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                                      <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DBConnection">[In_DB_Connection]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTName">[in_Config("Vendors_Table").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorsDTColumnsNames">[in_Config("VendorColumnNames").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_VendorStatus">[VStatus]</InArgument>
+                                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -8,11 +8,13 @@
     <x:Property Name="In_Str_vendorCountry" Type="InArgument(x:String)" />
     <x:Property Name="In_Str_TemplatePath" Type="InArgument(x:String)" />
     <x:Property Name="In_Str_MainPath" Type="InArgument(x:String)" />
+    <x:Property Name="In_Str_DDirector" Type="InArgument(x:String)" />
+    <x:Property Name="In_Str_AllIncoicesFileName" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>944.6666666666666,7299.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,7734.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Template_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -125,7 +127,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="954.6666666666666,7234.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="954.6666666666666,7670" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Str_WorkFlowname" />
     </Sequence.Variables>
@@ -136,12 +138,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message(Started)" sap:VirtualizedContainerService.HintSize="892.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Str_WorkFlowname+&quot; Started Execution&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="892.6666666666666,6852" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="892.6666666666666,7287.333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="854,6589.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="854,7024.666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="812,6410.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="812,6766" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,7 +179,7 @@
                     </If.Else>
                   </If>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="750,5151.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="750,5191.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="si:FileInfo" Name="FileComInfo" />
                     <Variable x:TypeArguments="x:Int32" Name="Int_Index" />
@@ -187,7 +189,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="688,982.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="688,1022.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="Invoices" Name="Str_InvoicesFolderPath" />
                       <Variable x:TypeArguments="x:String" Name="Str_PdfsPath" />
@@ -198,7 +200,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process(Open Power Shell)" FileName="cmd.exe" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
-                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="484,744" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' title='C:\Windows\System32\cmd.exe' /&gt;">
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="484,784" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' title='C:\Windows\System32\cmd.exe' /&gt;">
                       <ui:WindowScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
@@ -210,7 +212,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_24" SimulateType="False" Text="D:[k(enter)]">
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_24" SimulateType="False" Text="[In_Str_DDirector+&quot;[k(enter)]&quot;]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
                                   <ui:Target.TimeoutMS>
@@ -222,7 +224,7 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_25" SimulateType="False" Text="cd AllInvoices[k(enter)]">
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_25" SimulateType="False" Text="[&quot;cd &quot;+In_Str_AllIncoicesFileName+&quot;[k(enter)]&quot;]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
                                   <ui:Target.TimeoutMS>
@@ -376,7 +378,7 @@
                     </ui:CommentOut.Body>
                   </ui:CommentOut>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="472,938" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="750,938" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="Bool_comprissedFounded" />
                   </Sequence.Variables>
@@ -465,6 +467,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message(Ended)" sap:VirtualizedContainerService.HintSize="750.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Str_WorkFlowname+&quot; Ended Execution&quot;]" />
+    <ui:LogMessage DisplayName="Log Message(Ended)" sap:VirtualizedContainerService.HintSize="892.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Str_WorkFlowname+&quot; Ended Execution&quot;]" />
   </Sequence>
 </Activity>
