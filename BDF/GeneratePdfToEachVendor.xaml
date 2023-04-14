@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,6500</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>944.6666666666666,7299.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Template_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -125,7 +125,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="954.6666666666666,6435.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Template" sap:VirtualizedContainerService.HintSize="954.6666666666666,7234.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Str_WorkFlowname" />
     </Sequence.Variables>
@@ -136,12 +136,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message(Started)" sap:VirtualizedContainerService.HintSize="892.6666666666666,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Str_WorkFlowname+&quot; Started Execution&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="892.6666666666666,6052.666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="892.6666666666666,6852" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="854,5790" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="854,6589.333333333333" sap2010:WorkflowViewState.IdRef="RetryScope_1">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="812,5611.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Steps" sap:VirtualizedContainerService.HintSize="812,6410.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,7 +177,7 @@
                     </If.Else>
                   </If>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="750,4352" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Sequence(Action)" sap:VirtualizedContainerService.HintSize="750,5151.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="si:FileInfo" Name="FileComInfo" />
                     <Variable x:TypeArguments="x:Int32" Name="Int_Index" />
@@ -187,7 +187,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="688,1130" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Sequence(Cmd Create Folder)" sap:VirtualizedContainerService.HintSize="688,982.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="Invoices" Name="Str_InvoicesFolderPath" />
                       <Variable x:TypeArguments="x:String" Name="Str_PdfsPath" />
@@ -198,13 +198,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process(Open Power Shell)" FileName="cmd.exe" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
-                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="484,891.3333333333334" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' title='C:\Windows\System32\cmd.exe' /&gt;">
+                    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="484,744" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' title='C:\Windows\System32\cmd.exe' /&gt;">
                       <ui:WindowScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,744" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,596.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_25">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,7 +246,6 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" WaitForReady="INTERACTIVE" />
                           </Sequence>
                         </ActivityAction>
                       </ui:WindowScope.Body>
@@ -317,25 +316,77 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <uascw:CompressFiles CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileInfo="[FileComInfo]" CompressedFileName="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\Compressed.zip&quot;]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="688,220.66666666666666" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
-                    <uascw:CompressFiles.ContentToArchive>
-                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
-                        <InArgument x:TypeArguments="x:String">[In_Str_MainPath+In_Str_VendorTaxID]</InArgument>
-                      </scg:List>
-                    </uascw:CompressFiles.ContentToArchive>
-                  </uascw:CompressFiles>
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="688,716" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' title='C:\Windows\System32\cmd.exe' /&gt;">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,568.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_29" SimulateType="False" Text="[&quot;cd &quot;+In_Str_VendorTaxID+&quot;[k(enter)]&quot;]">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,135.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_31" SimulateType="False" Text="[&quot;tar -a -c -f comprissed.zip *.pdf‏&quot;+&quot;[k(enter)]&quot;]">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eeb57855-e4ca-4246-a835-8ced2de3a77d" InformativeScreenshot="e65b1af1dbfb9f9a9301bc3848e1be30">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                          <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'powershell.exe Windows'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="1a4558a938f5883fe5ba29a14f1f3e0a" WaitForReady="INTERACTIVE" />
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                  </ui:WindowScope>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="688,411.3333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,331.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uascw:CompressFiles CompressedResource="{x:Null}" Password="{x:Null}" ResourcesToArchive="{x:Null}" SecurePassword="{x:Null}" CodePage="Default" CompressedFileInfo="[FileComInfo]" CompressedFileName="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\Compressed.zip&quot;]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" EncryptionAlgorithm="Classic" sap:VirtualizedContainerService.HintSize="388,220.66666666666666" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+                          <uascw:CompressFiles.ContentToArchive>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                              <InArgument x:TypeArguments="x:String">[In_Str_MainPath+In_Str_VendorTaxID]</InArgument>
+                            </scg:List>
+                          </uascw:CompressFiles.ContentToArchive>
+                        </uascw:CompressFiles>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
                 </Sequence>
-                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="750,622.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Sequence(Post Comdition)" sap:VirtualizedContainerService.HintSize="472,938" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
-                    <Variable x:TypeArguments="x:Boolean" Name="Bool_PdfFounded" />
+                    <Variable x:TypeArguments="x:Boolean" Name="Bool_comprissedFounded" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:FileExistsX DisplayName="File Exists" Exists="[Bool_PdfFounded]" sap:VirtualizedContainerService.HintSize="410,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\&quot;+&quot;Compressed&quot;+In_Str_VendorTaxID]" />
-                  <If Condition="[Bool_PdfFounded]" sap:VirtualizedContainerService.HintSize="410,335.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                  <ui:FileExistsX DisplayName="File Exists" Exists="[Bool_comprissedFounded]" sap:VirtualizedContainerService.HintSize="410,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[In_Str_MainPath+In_Str_VendorTaxID+&quot;\&quot;+&quot;comprissed.zip&quot;]" />
+                  <If Condition="[Bool_comprissedFounded]" sap:VirtualizedContainerService.HintSize="410,650.6666666666666" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_18">
                         <sap:WorkflowViewStateService.ViewState>
@@ -354,7 +405,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[Str_WorkFlowname+&quot; Post Condition Failed&quot;]" />
-                        <Throw Exception="[new SystemException(&quot;Invalid Pdf&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        <Throw Exception="[new SystemException(&quot;Comprissed Not Found&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2" />
                       </Sequence>
                     </If.Else>
                   </If>

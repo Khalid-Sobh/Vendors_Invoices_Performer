@@ -206,7 +206,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Waiting&quot;]" />
-          <Delay Duration="00:05:00" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <Delay Duration="00:01:00" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
           <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[In_Counter]</OutArgument>
